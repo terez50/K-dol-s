@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Új elemek</title>
+    <script>
+        function tennivaloBeiras() {
+            var ujElem=document.createElement("div");
+            ujElem.innerHTML="Új elem";
+            document.getElementById("lista").appendChild(ujElem);
+        }
+    </script>
+</head>
+<body>
+    <div id="lista" onclick="tennivaloBeiras()">Új elem létrehozásához kattints ide</div>
+</body>
+</html>
