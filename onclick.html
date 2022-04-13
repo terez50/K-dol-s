@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onclick</title>
+</head>
+<body>
+    <a href="https://www.google.com" onclick="alert('Átirányítás a Google-ra');">
+        Google
+    </a>
+    <a href="https://www.google.com" onclick="return true">
+        Google
+    </a>
+    <!-- ez így hibát jelez, de működik -->
+    <a href="https://www.google.com" onclick="return false">
+        Google
+    </a>
+    <!-- ez így hibát jelez, de működik -->
+    <script>
+    </script>
+</body>
+</html>
