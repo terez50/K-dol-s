@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tárolás</title>
+    <script>
+        function mentes() {
+            var ujElem = document.getElementById("doboz").value;
+            localStorage.doboz=ujElem;
+        }
+        function betoltes() {
+            var elmentettDiv=document.getElementById("elmentettLista");
+            elmentettDiv.innerHTML=localStorage.doboz;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="doboz" value="Tennivaló beírása"><br>
+    <input type="button" id="mentes" value="Mentés" onclick="mentes()"><br>
+    <input type="button" id="betoltes" value="Betöltés" onclick="betoltes()"><br>
+    Elmentett elem: <div id="elmentettLista"></div>
+</body>
+
+</html>
