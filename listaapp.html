@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennivalók listája</title>
+    <script>
+        function tennivaloBeiras() {
+            var ujElem = document.createElement("div");
+            ujElem.innerHTML = document.getElementById("doboz").value;
+            ujElem.onclick = elemTorles;
+            document.getElementById("lista").appendChild(ujElem);
+            listaMentes();
+        }
+        function elemTorles() {
+            document.getElementById("lista").removeChild(this);
+            listaMentes();
+        }
+        function listaMentes() {
+            localStorage.taroltLista = document.getElementById("lista").innerHTML;
+        }
+        function listaBetoltes() {
+            document.getElementById("lista").innerHTML = localStorage.taroltLista;
+            for (var i = 0; i < lista.children.length; i++) {
+                lista.children[i].onclick = elemTorles;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p>Volkov-ház</p>
+    <p>Tennivalók a különlges kiállítás előtt</p>
+    <br>
+    <input type="text" id="doboz" value="Tennivaló beírása">
+    <br>
+    <input type="button" value="Hozzáadás a listához" onclick="tennivaloBeiras()">
+    <br>
+    <div id="lista"></div>
+    <script>
+        if (localStorage.taroltLista) {
+            listaBetoltes();
+        }
+    </script>
+</body>
+
+</html>
