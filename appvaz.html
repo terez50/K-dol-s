@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennivalók listája</title>
+    <script>
+        function tennivaloBeiras() {
+            var ujElem=document.createElement("div");
+            ujElem.innerHTML=document.getElementById("doboz").value;
+            document.getElementById("lista").appendChild(ujElem);
+        }
+    </script>
+</head>
+<body>
+    <p>Tennivalók a különleges kiállítás előtt</p>
+    <br>
+    <input type="text" id="doboz" value="Tennivaló beírása">
+    <br>
+    <input type="button" value="Hozzáadás a listához"
+        onclick="tennivaloBeiras()">
+    <br>
+    <div id="lista"></div>
+</body>
+</html>
