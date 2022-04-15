@@ -57,7 +57,7 @@
             szereploLetrehozas();
             ciklusok++;
             if(ciklusok < 12) {
-                setTimeout(jatekCiklus, 3000);
+                setTimeout(jatekCiklus, lathatoSzemelyek ? 1000 : 3000);
             } else {
                 alert("Összpontszám: " + jatekPontszam);
             }
