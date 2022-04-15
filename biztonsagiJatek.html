@@ -48,7 +48,6 @@
         function jatekCiklus() {
             lathatoSzemelyek=!lathatoSzemelyek;
             szereploLetrehozas();
-            felvillanoSzereplok();
             ciklusok++;
             if(ciklusok < 12) {
                 setTimeout(jatekCiklus, 3000);
@@ -58,7 +57,9 @@
         }
         function szereploLetrehozas() {
             var tabla=document.getElementById("tabla");
+            var osztalyBeallito = lathatoSzemelyek ? "szereplo lathato" : "szereplo rejtett";
             for(var index=0; index<6; index++) {
+                tabla.children[index].className=osztalyBeallito;
                 tabla.children[index].innerHTML="Vendég";
                 tabla.children[index].onclick=function() {
                     jatekPontszam += -2;
@@ -68,13 +69,6 @@
             tabla.children[veletlenSzam].innerHTML="Tolvaj";
             tabla.children[veletlenSzam].onclick=function() {
                 jatekPontszam++;
-            }
-        }
-        function felvillanoSzereplok() {
-            var tabla = document.getElementById("tabla");
-            var osztalyBeallito = lathatoSzemelyek ? "szereplo lathato" : "szereplo rejtett";
-            for(var index=0; index<6; index++) {
-                tabla.children[index].className=osztalyBeallito;
             }
         }
     </script>
