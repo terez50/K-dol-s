@@ -13,7 +13,8 @@
             width: 650px;
         }
         .szereplo {
-            background-color: lightblue;
+            background: url("Guest.jpg");
+            background-size: cover;
             width: 120px;
             height: 120px;
             padding: 10px;
@@ -21,7 +22,8 @@
             float: left;
         }
         .tolvaj {
-            background-color: red;
+            background: url("Thief.jpg");
+            background-size: cover;
         }
         .rejtett {
             display: none;
@@ -34,12 +36,12 @@
 <body>
     <input type="button" value="Játék indítása" onclick="jatekInditas()">
     <div id="tabla">
-        <div class="szereplo">1</div>
-        <div class="szereplo">2</div>
-        <div class="szereplo">3</div>
-        <div class="szereplo">4</div>
-        <div class="szereplo">5</div>
-        <div class="szereplo">6</div>
+        <div class="szereplo"></div>
+        <div class="szereplo"></div>
+        <div class="szereplo"></div>
+        <div class="szereplo"></div>
+        <div class="szereplo"></div>
+        <div class="szereplo"></div>
     </div>
     <script>
         function jatekInditas() {
@@ -63,13 +65,13 @@
             var osztalyBeallito = lathatoSzemelyek ? "szereplo lathato" : "szereplo rejtett";
             for(var index=0; index<6; index++) {
                 tabla.children[index].className=osztalyBeallito;
-                tabla.children[index].innerHTML="Vendég";
+                tabla.children[index].innerHTML="";
                 tabla.children[index].onclick=function() {
                     jatekPontszam += -2;
                 }
             }
             var veletlenSzam=Math.floor(Math.random()*6);
-            tabla.children[veletlenSzam].innerHTML="Tolvaj";
+            tabla.children[veletlenSzam].innerHTML="";
             tabla.children[veletlenSzam].onclick=function() {
                 jatekPontszam++;
             }
