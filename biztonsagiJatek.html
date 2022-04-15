@@ -44,6 +44,7 @@
         }
         var ciklusok = 0;
         var lathatoSzemelyek = false;
+        var jatekPontszam=0;
         function jatekCiklus() {
             lathatoSzemelyek=!lathatoSzemelyek;
             szereploLetrehozas();
@@ -52,16 +53,22 @@
             if(ciklusok < 12) {
                 setTimeout(jatekCiklus, 3000);
             } else {
-                alert("Játék vége");
+                alert("Összpontsuám: " + jatekPontszam);
             }
         }
         function szereploLetrehozas() {
             var tabla=document.getElementById("tabla");
             for(var index=0; index<6; index++) {
                 tabla.children[index].innerHTML="Vendég";
+                tabla.children[index].onclick=function() {
+                    jatekPontszam += -2;
+                }
             }
             var veletlenSzam=Math.floor(Math.random()*6);
             tabla.children[veletlenSzam].innerHTML="Tolvaj";
+            tabla.children[veletlenSzam].onclick=function() {
+                jatekPontszam++;
+            }
         }
         function felvillanoSzereplok() {
             var tabla = document.getElementById("tabla");
