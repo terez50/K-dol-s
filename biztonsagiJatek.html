@@ -20,6 +20,9 @@
             margin: 10px;
             float: left;
         }
+        .tolvaj {
+            background-color: red;
+        }
         .rejtett {
             display: none;
         }
@@ -52,7 +55,7 @@
             if(ciklusok < 12) {
                 setTimeout(jatekCiklus, 3000);
             } else {
-                alert("Összpontsuám: " + jatekPontszam);
+                alert("Összpontszám: " + jatekPontszam);
             }
         }
         function szereploLetrehozas() {
@@ -70,6 +73,7 @@
             tabla.children[veletlenSzam].onclick=function() {
                 jatekPontszam++;
             }
+            tabla.children[veletlenSzam].className=osztalyBeallito + " tolvaj";
         }
     </script>
 </body>
