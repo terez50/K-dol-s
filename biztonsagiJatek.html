@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biztonsági játék</title>
+    <style>
+        #tabla {
+            border: 1px solid black;
+            background-color: gray;
+            height: 350px;
+            width: 650px;
+        }
+        .szereplo {
+            background-color: lightblue;
+            width: 120px;
+            height: 120px;
+            padding: 10px;
+            margin: 10px;
+            float: left;
+        }
+        .rejtett {
+            display: none;
+        }
+        .lathato {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="Játék indítása" onclick="jatekInditas()">
+    <div id="tabla">
+        <div class="szereplo">1</div>
+        <div class="szereplo">2</div>
+        <div class="szereplo">3</div>
+        <div class="szereplo">4</div>
+        <div class="szereplo">5</div>
+        <div class="szereplo">6</div>
+    </div>
+    <script>
+        function jatekInditas() {
+            jatekCiklus();
+        }
+        var ciklusok = 0;
+        var lathatoSzemelyek = false;
+        function jatekCiklus() {
+            lathatoSzemelyek=!lathatoSzemelyek;
+            felvillanoSzereplok();
+            ciklusok++;
+            if(ciklusok < 12) {
+                setTimeout(jatekCiklus, 3000);
+            } else {
+                alert("Játék vége");
+            }
+        }
+        function felvillanoSzereplok() {
+            var tabla = document.getElementById("tabla");
+            var osztalyBeallito = lathatoSzemelyek ? "szereplo lathato" : "szepelo rejtett";
+            for(var index=0; index<6; index++) {
+                tabla.children[index].className=osztalyBeallito;
+            }
+        }
+    </script>
+</body>
+</html>
